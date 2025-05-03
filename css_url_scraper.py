@@ -7,9 +7,9 @@ import requests
 from fileinput import FileInput
 
 DOMAIN = ''
-RE_EXPR = re.compile("""url\(['|"]?  # matches literal url( or url(
+RE_EXPR = re.compile("""url\\(['|"]?  # matches literal url( or url(
                      (.*?)         # captures any char seq eg. /path/to/item.png
-                     ['|"]?\)""",    # matches literal ') or ")
+                     ['|"]?\\)""",    # matches literal ') or ")
                       re.VERBOSE | re.IGNORECASE | re.UNICODE)
 
 class BadFileTypeException(Exception):
